@@ -44,6 +44,12 @@ $ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plug
 
 The LaunchMyApp.js file is brought in automatically.
 
+#### Special case for Uniclau
+Update the config.xml file so that the following variable appears as follows:
+```
+<preference name="AndroidLaunchMode" value="singleTask" />
+```
+
 Note for iOS: there was a bug in CLI which caused an error in your `*-Info.plist`.
 Please manually remove the blank line and whitespace (if any) from `NSMainNibFile` and `NSMainNibFile~ipad` (or your app won't start at all).
 
