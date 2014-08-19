@@ -1,17 +1,15 @@
 # Custom URL scheme PhoneGap Plugin
 #### launch your app by a link like this: `mycoolapp://`
 for iOS and Android, by [Eddy Verbruggen](http://www.x-services.nl)
-- This repo is for PhoneGap 3.0.0 and up
-- For PhoneGap 2.9.0 and lower, [switch to the phonegap-2.9.0-and-lower branch](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin/tree/phonegap-2.9.0-and-lower)
 
-1. [Description](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#1-description)
-2. [Installation](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#2-installation)
-	2. [Automatically (CLI / Plugman)](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#automatically-cli--plugman)
-	2. [Manually](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#manually)
-	2. [PhoneGap Build](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#phonegap-build)
-3. [Usage](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#3-usage)
-4. [URL Scheme hints](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#4-url-scheme-hints)
-5. [License](https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin#5-license)
+1. [Description](https://github.com/uniclau/LaunchMyApp-PhoneGap-Plugin#1-description)
+2. [Installation](https://github.com/uniclau/LaunchMyApp-PhoneGap-Plugin#2-installation)
+	2. [Automatically (CLI / Plugman)](https://github.com/uniclau/LaunchMyApp-PhoneGap-Plugin#automatically-cli--plugman)
+	2. [Manually](https://github.com/uniclau/LaunchMyApp-PhoneGap-Plugin#manually)
+	2. [PhoneGap Build](https://github.com/uniclau/LaunchMyApp-PhoneGap-Plugin#phonegap-build)
+3. [Usage](https://github.com/uniclau/LaunchMyApp-PhoneGap-Plugin#3-usage)
+4. [URL Scheme hints](https://github.com/uniclau/LaunchMyApp-PhoneGap-Plugin#4-url-scheme-hints)
+5. [License](https://github.com/uniclau/LaunchMyApp-PhoneGap-Plugin#5-license)
 
 ## 1. Description
 
@@ -38,17 +36,19 @@ LaunchMyApp is compatible with [Cordova Plugman](https://github.com/apache/cordo
 Replace `mycoolapp` by a nice scheme you want to have your app listen to:
 
 ```
-$ cordova plugin add https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
+$ cordova plugin add https://github.com/uniclau/LaunchMyApp-PhoneGap-Plugin.git --variable URL_SCHEME=mycoolapp
 ```
 (note that the phonegap cli doesn't accept variables, so please use the cordova cli as shown above)
 
 The LaunchMyApp.js file is brought in automatically.
 
-#### Special case for Uniclau
+#### Special case for Uniclau Apps
 Update the config.xml file so that the following variable appears as follows:
 ```
 <preference name="AndroidLaunchMode" value="singleTask" />
 ```
+
+---
 
 Note for iOS: there was a bug in CLI which caused an error in your `*-Info.plist`.
 Please manually remove the blank line and whitespace (if any) from `NSMainNibFile` and `NSMainNibFile~ipad` (or your app won't start at all).
