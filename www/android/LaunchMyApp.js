@@ -14,12 +14,4 @@
     }
 
   document.addEventListener("deviceready", triggerOpenURL, false);
-  
-  // Special case for Uniclau => Kill the app on pause. 
-  // If the app is launched while parameters are passed to it, the plugin does not work. 
-  // So we exit if we are not logged in yet
-  document.addEventListener("pause", function(){
-    if(!localStorage.loggedIn)
-      navigator.app.exitApp()
-  }, false);
 }());
